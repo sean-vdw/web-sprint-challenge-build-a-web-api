@@ -21,7 +21,7 @@ async function validateProjId(req, res, next) {
   }
 };
 
-async function validateProject(req, res, next) {
+function validateProject(req, res, next) {
   const { name, description } = req.body;
   if (!name || !description) {
     res.status(400).json({ message: "Please enter both a project name and description..." });
