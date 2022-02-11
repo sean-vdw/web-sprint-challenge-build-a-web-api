@@ -4,8 +4,6 @@ const Projects = require('./projects-model');
 const { logger, validateProjId, validateProject } = require('./projects-middleware');
 const router = express.Router();
 
-// Pull in middleware
-
 // Endpoints
 router.get('/', logger, (req, res, next) => {
   Projects.get()
