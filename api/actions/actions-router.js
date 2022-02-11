@@ -32,4 +32,16 @@ router.post('/', logger, validateActionId, validateAction, (req, res, next) => {
     .catch(next);
 });
 
+router.put('/:id', logger, validateActionId, validateAction, (req, res, next) => {
+  Actions.update(req.params.id, req.body)
+  .then(updatedAction => {
+    if(req.body.completed === null || req.body.completed === undefined) {
+      res.status(400).json({ message: "Please include a completion status..." });
+    } else {
+      res.status(200).json(updatedAction);
+    }
+  })
+  .catch(next);
+});
+
 module.exports = router;
