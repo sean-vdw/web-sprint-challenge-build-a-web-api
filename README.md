@@ -147,7 +147,17 @@ We have provided test data for all the resources.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
-1. Understand and explain the use of Middleware.
-1. The basic principles of the REST architectural style.
-1. Understand and explain the use of Express Routers.
-1. Describe tooling used to manually test the correctness of an API.
+  > Node.js simply allows us to run javascript outside of the browser. This is useful as it removes context switching between the server and client. The other benefits are that it is single-threaded (removes complexity of managing multiple threads), asynchronous (takes advantage of the processor it's running on), and takes advantage of the vast NPM registry. 
+  > Express is a javascript framework that sits on top of the Node server. It adds extra useful functionality like Routing, Middleware support, and a more eloquent API.
+
+2. Understand and explain the use of Middleware.
+> Middleware are functions that get the request and response of objects, perform operations on them, and either pass them to the next piece of middleware or return them back to the client. This essentially brings a new useful array of functions to help developers interact with requests and responses. 
+
+3. The basic principles of the REST architectural style.
+> The priciples of REST are recommendations, not a standard. They are: 1) Everything you interact with is a resource (can have multiple representations); 2) Each resource is accessible via a unique URI; 3) Communications are done over the stateless protocol (HTTP); 4) Management of resources is done through HTTP Methods.
+
+4. Understand and explain the use of Express Routers.
+> Express Routers are a way to select which handler function is executed based on the URL and which HTTP method was used. This helps break the application into smaller parts. 
+
+5. Describe tooling used to manually test the correctness of an API.
+> The tooling used to manaually test the correctness of an API allows us to self-check expected responses and accuracy of our API calls including methods and middleware. We can visually see the responses of each request, allowing us to debug our application piece by piece before moving to the next set of features.
